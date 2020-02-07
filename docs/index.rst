@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 ==================================
-Welcome to PyNews's documentation!
+Welcome to PyNews documentation!
 ==================================
 
 .. image:: https://readthedocs.org/projects/pip/badge/?version=latest&style=flat

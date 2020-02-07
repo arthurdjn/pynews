@@ -155,7 +155,7 @@ Now that your model is trained, evaluate it on the test dataset.
     test_accuracy, test_predictions, test_labels, confusion_matrix = eval_func(train_loader, model)
 
 
-.. code-block:: python
+.. code-block:: console
 
     # Get the per class test_accuracy
     confusion_matrix.diag() / confusion_matrix.sum(1) 

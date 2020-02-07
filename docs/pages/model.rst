@@ -1,6 +1,6 @@
-=======
-Example
-=======
+===
+Model
+=====
 
 PyNews introduces basic steps for Natural Language Processing (NLP) analysis.
 First, you may want to clean up the raw data, from *The Signal
@@ -21,15 +21,38 @@ These functionalities are coded in the *pynews.data* module.
 
 
 
-
-
-Hyper Parameters
-================
-
-
-
 Feature Tuning
 ==============
+
+Before changing the structure of the model, we explored differents Bag of Words features implementation
+by varying the vocabulary size, the preprocessing and building the vocabulary before and after the split.
+For example, with a vocabulary size of 4000 we did not see improvement in the performance. In addition,
+using the Part of Speech (POS) tags did not help to optimize the results. Because of difficulties and time
+restriction we did not create the vocabulary after splitting into training and development parts.
+
+
+Hyperparameters
+===============
+
+A brief training session to evaluate the performance with different hyper parameters was firstly performed.
+The hyper parameters used are described on the table below.
+
++-------------------+-----------+
+|Parameter          |Value      |
++-------------------+-----------+
+|Split Train/Dev    | .9        |
++-------------------+-----------+
+|Vocabulary         |3000       |
++-------------------+-----------+
+|Batch size         | 32        |
++-------------------+-----------|
+|Learning Rate      | .09       |
++-------------------+-----------+
+|Epochs             | 250       |
++-------------------+-----------+
+
+
+
 
 
 Architecture

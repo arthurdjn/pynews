@@ -1,4 +1,3 @@
-=====
 Usage
 =====
 
@@ -109,6 +108,7 @@ Before training the model, divide your dataset in batches and load it with the P
 Then, create your model or use the *NewsModel* one, and define your loss function and optimizer.
 
 .. code-block:: python
+    :linenos:
 
     from pynews import NewsModel
 
@@ -143,8 +143,8 @@ You can now train the model with :
 
 
 
-Evaluate
-========
+Testing
+=======
 
 Now that your model is trained, evaluate it on the test dataset.
 

@@ -17,15 +17,13 @@ https://readthedocs.org/projects/pip/badge/?version=latest&style=flat
 
 
 
-Table
-=====
 
 .. toctree::
     :maxdepth: 2
     :caption: Table of Contents
 
     pages/getting-started
-
+    pages/getting-started
 
     pages/usage
 

@@ -37,19 +37,17 @@ Hyperparameters
 A brief training session to evaluate the performance with different hyper parameters was firstly performed.
 The hyper parameters used are described on the table below.
 
-+-------------------+-----------+
-|Parameter          |Value      |
-+-------------------+-----------+
-|Split Train/Dev    | .9        |
-+-------------------+-----------+
-|Vocabulary         |3000       |
-+-------------------+-----------+
-|Batch size         | 32        |
-+-------------------+-----------+
-|Learning Rate      | .09       |
-+-------------------+-----------+
-|Epochs             | 250       |
-+-------------------+-----------+
+.. table:: Hyperparameters
+
+    +-------------------+-----------+
+    |Parameter          |Value      |
+    +-------------------+-----------+
+    |Split Train/Dev    | .9        |
+    |Vocabulary         | 3000      |
+    |Batch size         | 32        |
+    |Learning Rate      | .09       |
+    |Epochs             | 250       |
+    +-------------------+-----------+
 
 
 Architecture
@@ -59,20 +57,69 @@ Then, five different models were trained on Saga’s server with different layou
 number of hidden layers, and their architectures are presented in the tables below.
 
 
-+-------------------+-----------+
-|Parameter          |Value      |
-+-------------------+-----------+
-|Split Train/Dev    | .9        |
-+-------------------+-----------+
-|Vocabulary         |3000       |
-+-------------------+-----------+
-|Batch size         | 32        |
-+-------------------+-----------+
-|Learning Rate      | .09       |
-+-------------------+-----------+
-|Epochs             | 250       |
-+-------------------+-----------+
+.. table:: First Model
 
+    +-----------+-----------+------------+
+    | Layers    | Neurons   | Activation |     
+    +-----------+-----------+------------+  
+    | Input     | 3000      | ReLU       |
+    | Hidden    | 150       | Linear     |
+    | Output    | 20        | Softmax    |
+    +-----------+-----------+------------+
+
+
+.. table:: Second Model
+
+    +-----------+-----------+------------+
+    | Layers    | Neurons   | Activation |     
+    +-----------+-----------+------------+  
+    | Input     | 3000      | ReLU       |
+    | Hidden 1  | 150       | ReLU       |
+    | Hidden 2  | 150       | Linear     |
+    | Output    | 20        | Softmax    |
+    +-----------+-----------+------------+
+
+
+.. table:: Third Model
+
+    +-----------+-----------+------------+
+    | Layers    | Neurons   | Activation |     
+    +-----------+-----------+------------+  
+    | Input     | 3000      | ReLU       |
+    | Hidden 1  | 150       | ReLU       |
+    | Hidden 2  | 150       | ReLU       |
+    | Hidden 3  | 150       | Linear     |
+    | Output    | 20        | Softmax    |
+    +-----------+-----------+------------+
+
+
+.. table:: Fourth Model
+
+    +-----------+-----------+------------+
+    | Layers    | Neurons   | Activation |     
+    +-----------+-----------+------------+  
+    | Input     | 3000      | ReLU       |
+    | Hidden 1  | 150       | ReLU       |
+    | Hidden 2  | 150       | ReLU       |
+    | Hidden 3  | 150       | ReLU       |
+    | Hidden 4  | 150       | Linear     |
+    | Output    | 20        | Softmax    |
+    +-----------+-----------+------------+
+
+
+.. table:: Fifth Model
+
+    +-----------+-----------+------------+
+    | Layers    | Neurons   | Activation |     
+    +-----------+-----------+------------+  
+    | Input     | 3000      | ReLU       |
+    | Hidden 1  | 150       | ReLU       |
+    | Hidden 2  | 150       | ReLU       |
+    | Hidden 3  | 150       | ReLU       |
+    | Hidden 4  | 150       | ReLU       |
+    | Hidden 5  | 150       | Linear     |
+    | Output    | 20        | Softmax    |
+    +-----------+-----------+------------+
 
 
 Evaluation

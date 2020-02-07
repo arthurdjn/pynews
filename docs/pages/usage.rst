@@ -118,7 +118,7 @@ Then, create your model or use the *NewsModel* one, and define your loss functio
     # Define the hyperparameters
     EPOCHS = 250
     LEARNING_RATE = 0.09
-    WEIGHT_DECACAY = 0.01
+    WEIGHT_DECAY = 0.01
 
     # Create a Feed Forward neural network
     # with 3 hidden layers
@@ -128,7 +128,7 @@ Then, create your model or use the *NewsModel* one, and define your loss functio
 
     # Loss function
     criterion = torch.nn.CrossEntropyLoss()
-    Optimizer = torch.optim.SGD(model.parameters(), lr = LEARNING_RATE, weight_decay = WEIGHT_DECACAY)
+    Optimizer = torch.optim.SGD(model.parameters(), lr = LEARNING_RATE, weight_decay = WEIGHT_DECAY)
 
 
 You can now train the model with :
@@ -204,7 +204,6 @@ Open your model and the *vectorizer.pickle* to process the data exactly the same
 
     import torch
     from torch.utils import data
-    from sklearn.preprocessing import LabelEncoder
 
     # Load your pytorch model
     model = torch.load("your_model_path.pt")
@@ -302,18 +301,13 @@ For example, we will try to predict the source of this article (https://myinform
                 As the world moves towards greater technological advancements, there is no aspect of your life that is not touched by the internet — including the banking sector. If you are looking to open an account with a good online bank that isn’t just going to give you a no-fee option but also great customer service combined with a bunch of different features, you can look at the options mentioned above. All in all, the decision will have to be based on your individual needs, as people differ in terms of what they need from an online bank. Regardless, you can be assured that any of the banks mentioned above will strive towards giving you a fantastic experience!
                 """
 
-Extract the Bag of Words features and the vocabulary of the document with the vectorizer, and create your PyTorch Data object.
+Extract the Bag of Words features and the vocabulary of the document with the vectorizer.
 
 .. code-block:: python
     :linenos:
 
-    label_vectorizer = LabelEncoder()
-
     # The Bag of Word
     input_features = text_vectorizer.transform([document]).toarray().astype(np.float32)
-    # The source
-    gold_classes = label_vectorizer.fit_transform(["MyInforms"])
-
     # Converting the numpy array to pytorch tensors
     torch_input_features = torch.from_numpy(input_features)
 

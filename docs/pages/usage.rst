@@ -35,7 +35,7 @@ These functionalities are coded in the *pynews.data* module.
 
 You can have access to the documents informations from the attributes of the NewsDataset class.
 
-.. code-block:: python
+.. code-block:: pycon
 
     # The shape of the dataset 
     dataset.shape
@@ -144,7 +144,7 @@ Evaluate
 Now that your model is trained, evaluate it on the test dataset.
 
 
-.. code-block:: python
+.. code-block:: pycon
 
     # Load the dataset
     train_loader = DataLoader(dataset    = test_dataset,

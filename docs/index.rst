@@ -7,6 +7,19 @@
 Welcome to PyNews's documentation!
 ==================================
 
+https://readthedocs.org/projects/pip/badge/?version=latest&style=flat
+
+
+**A python package for newspaper classification**
+
+
+**PyNews** is a Natural Language Processing (NLP) short project made at the University of Oslo.
+
+
+
+Table
+=====
+
 .. toctree::
    :maxdepth: 2
 
@@ -24,9 +37,9 @@ Welcome to PyNews's documentation!
 
 
 
-==================
-Indices and tables
-==================
+
+Indices
+=======
 
 * :ref:`genindex`
 * :ref:`modindex`

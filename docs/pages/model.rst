@@ -45,7 +45,7 @@ The hyper parameters used are described on the table below.
 |Vocabulary         |3000       |
 +-------------------+-----------+
 |Batch size         | 32        |
-+-------------------+-----------|
++-------------------+-----------+
 |Learning Rate      | .09       |
 +-------------------+-----------+
 |Epochs             | 250       |

@@ -10,15 +10,27 @@ Media One-Million News Articles* which contains articles from september 2015. Th
 Data Processing
 ===============
 
-The dataset can be found in the *data* folder, as a 
-
+The dataset can be found in the *data* folder, called *signal_20_obligatory1_train.tsv.gz*.
 
 The dataset is made of Part of Speech (POS) tags for every words, meaning that the type ("NOUN", "VERB", "ADJ" etc.) are stacked on each words with an underscore.
 A first step was then to split the words in half, to keep only the word and not its type.
-Then, the BoW can be created.
+Then, the BoW and the vocabulary can be created.
 
 
 These functionalities are coded in the *pynews.data* module. 
+
+
+.. code-block:: python
+
+    import torch
+    from pynews import NewsDataset
+
+    PATH = "data/signal_20_obligatory1_train.tsv.gz"
+    # Limit of the vocabulary
+    VOCAB_SIZE = 3000
+
+    # Create the PyTorch Dataset object from the dataset
+    dataset = NewsDataset(PATH, vocab_size = VOCAB_SIZE)
 
 
 

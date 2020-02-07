@@ -132,3 +132,5 @@ dmypy.json
 # Ignore the unzipped tsv file
 signal_20_obligatory1_train.tsv
 .Rproj.user
+.pickle
+.pt

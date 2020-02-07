@@ -46,7 +46,8 @@ def eval_func(batched_data, model):
             correct += len((predicted == gold_label).nonzero())
             total += len(gold_label)
             # Update the confusion matrix
-            confusion_matrix[predicted, gold_label] += 1
+            for i in range(len(predicted)):
+                confusion_matrix[predicted[i], gold_label[i]] += 1
         accuracy = correct / total
 
     return accuracy, predicted, gold_label, confusion_matrix

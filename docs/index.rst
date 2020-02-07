@@ -14,7 +14,7 @@ Welcome to PyNews's documentation!
    pages/getting-started
 
 
-   pages/example
+   pages/usage
 
 
    pages/model

@@ -21,6 +21,7 @@ These functionalities are coded in the *pynews.data* module.
 
 
 .. code-block:: python
+    :linenos:   
 
     import torch
     from pynews import NewsDataset
@@ -67,6 +68,7 @@ You can have access to the documents informations from the attributes of the New
 You can now save the vectorizer so your Bag of Words features will always be in the same order.
 
 .. code-block:: python
+    :linenos:
 
     dataset.save_vectorizer("vectorizer.pickle")
 
@@ -76,6 +78,7 @@ one used to train the model, the other to evaluate and test it.
 
 
 .. code-block:: python
+    :linenos:
 
     # Define your split ratio
     SPLIT = 0.9
@@ -93,6 +96,7 @@ Training
 Before training the model, divide your dataset in batches and load it with the PyTorch class :
 
 .. code-block:: python
+    :linenos:
 
     # Divide your data in batches of size BATCH_SIZE
     BATCH_SIZE = 32
@@ -121,12 +125,13 @@ Then, create your model or use the *NewsModel* one, and define your loss functio
 
     # Loss function
     criterion = torch.nn.CrossEntropyLoss()
-    # Optimizer = torch.optim.SGD(model.parameters(), lr = LEARNING_RATE, weight_decay = WEIGHT_DECACAY)
+    Optimizer = torch.optim.SGD(model.parameters(), lr = LEARNING_RATE, weight_decay = WEIGHT_DECACAY)
 
 
 You can now train the model with :
 
 .. code-block:: python
+    :linenos:
 
     from pynews import Trainer
 
@@ -145,6 +150,7 @@ Now that your model is trained, evaluate it on the test dataset.
 
 
 .. code-block:: python
+    :linenos:
 
     # Load the dataset
     train_loader = DataLoader(dataset    = test_dataset,

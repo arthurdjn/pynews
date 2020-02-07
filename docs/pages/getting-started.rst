@@ -6,8 +6,8 @@ Getting Started
 About
 =====
 
-This project concerns news article classification using Bag of Words. A feed forward neural network was
-trained to predict one of the 20 sources. The PyNews package implemented in python was used to explore the
+This project concerns news article classification using Bag of Words (BoW). A feed forward neural network was
+trained to predict one of the 20 sources. The **PyNews** package implemented in python was used to explore the
 different possibilities and training hyper parameters, with the help of PyTorch.
 We have trained and compared five different architectures on a training and development set. The main focus
 of this report is to analyse the influence of the number of hidden layers on the model’s performance and time
@@ -19,7 +19,7 @@ unseen data.
 Dependencies
 ============
 
-PyNews was made in Python 3.7 and uses multiple machine learning libraries :
+**PyNews** was made in Python 3.7 and uses multiple machine learning libraries :
 
 - PyTorch
 - Numpy

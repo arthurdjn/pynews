@@ -1,4 +1,7 @@
 # pynews
+![GitHub Pipenv locked Python version](https://readthedocs.org/projects/pip/badge/)
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
+
 **A PyTorch Multi Layer Perceptrons for NewsPaper classification.**
 
 ## About

@@ -52,16 +52,33 @@ The hyper parameters used are described on the table below.
 +-------------------+-----------+
 
 
-
-
-
 Architecture
 ============
+
+Then, five different models were trained on Saga’s server with different layout. These models differ in their
+number of hidden layers, and their architectures are presented in the tables below.
+
+
++-------------------+-----------+
+|Parameter          |Value      |
++-------------------+-----------+
+|Split Train/Dev    | .9        |
++-------------------+-----------+
+|Vocabulary         |3000       |
++-------------------+-----------+
+|Batch size         | 32        |
++-------------------+-----------+
+|Learning Rate      | .09       |
++-------------------+-----------+
+|Epochs             | 250       |
++-------------------+-----------+
 
 
 
 Evaluation
 ==========
+
+
 
 
 

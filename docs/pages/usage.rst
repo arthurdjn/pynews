@@ -37,31 +37,31 @@ You can have access to the documents informations from the attributes of the New
 
 .. code-block:: pycon
 
-    The shape of the dataset 
+    # The shape of the dataset 
     >>> dataset.shape
-    >>> (75141, 3000)
+    (75141, 3000)
 
-    The classes of the dataset
+    # The classes of the dataset
     >>> dataset.classes
-    >>> ['4 Traders', 'App.ViralNewsChart.com', 'BioSpace', 'Bloomberg', 'EIN News',
-         'Fat Pitch Financials', 'Financial Content', 'Individual.com',
-         'Latest Nigerian News.com', 'Mail Online UK', 'Market Pulse Navigator',
-         'Marketplace', 'MyInforms', 'NewsR.in', 'Reuters', 'Town Hall' 'Uncova',
-         'Wall Street Business Network', 'Yahoo! Finance', 'Yahoo! News Australia']
+    ['4 Traders', 'App.ViralNewsChart.com', 'BioSpace', 'Bloomberg', 'EIN News',
+     'Fat Pitch Financials', 'Financial Content', 'Individual.com',
+     'Latest Nigerian News.com', 'Mail Online UK', 'Market Pulse Navigator',
+     'Marketplace', 'MyInforms', 'NewsR.in', 'Reuters', 'Town Hall' 'Uncova',
+     'Wall Street Business Network', 'Yahoo! Finance', 'Yahoo! News Australia']
 
-    The BoW inputs
+    # The BoW inputs
     >>> dataset.input_features
-    |>>> tensor([[0., 0., 0.,  ..., 0., 0., 0.],
-    |            [0., 0., 0.,  ..., 0., 0., 0.],
-    |            [0., 0., 0.,  ..., 0., 0., 0.],
-    |            ...,
-    |            [0., 0., 0.,  ..., 0., 0., 0.],
-    |            [0., 0., 0.,  ..., 0., 0., 0.],
-    |            [0., 0., 0.,  ..., 0., 0., 0.]])
+    tensor([[0., 0., 0.,  ..., 0., 0., 0.],
+            [0., 0., 0.,  ..., 0., 0., 0.],
+            [0., 0., 0.,  ..., 0., 0., 0.],
+             ...,
+            [0., 0., 0.,  ..., 0., 0., 0.],
+            [0., 0., 0.,  ..., 0., 0., 0.],
+            [0., 0., 0.,  ..., 0., 0., 0.]])
     
-    The gold classes 
+    # The gold classes 
     >>> dataset.gold_classes
-    >>> tensor([16,  0, 12,  ..., 19, 11, 12], dtype=torch.int32)
+    tensor([16,  0, 12,  ..., 19, 11, 12], dtype=torch.int32)
 
 
 You can now save the vectorizer so your Bag of Words features will always be in the same order.
@@ -153,10 +153,39 @@ Now that your model is trained, evaluate it on the test dataset.
 
     # Evaluate the model
     test_accuracy, test_predictions, test_labels, confusion_matrix = eval_func(train_loader, model)
-
+    # Get the per class accuracy
+    per_class_accuracy = confusion_matrix.diag() / confusion_matrix.sum(1) 
+    # Compute the precision, recall and macro-f1 scores
+    precision = precision_score(test_labels, test_predictions, average='macro')
+    recall = recall_score(test_labels, test_predictions, average='macro')
+    macro_f1 = f1_score(test_labels, test_predictions, average='macro')
 
 .. code-block:: pycon
 
-    Get the per class test_accuracy
-    >>> confusion_matrix.diag() / confusion_matrix.sum(1) 
-    >>> 
+    # Global accuracy
+    >>> test_accuracy
+    0.5281437125748503
+
+    # Per class accuracy
+    >>> per_class_accuracy
+    tensor([0.4314, 0.8500, 0.1333, 0.2852, 0.8547, 0.2279, 0.1297, 0.5329, 0.5388,
+            0.5556, 0.1435, 0.2082, 0.3446, 0.7043, 0.5000, 0.1399, 0.4604, 0.1401,
+            0.3069, 0.4850])
+
+    # Precision, recall and macro-F1 scores 
+    >>> precision
+    0.4126984126984127
+    >>> recall
+    0.4944444444444444
+    >>> macro_f1
+    0.4358730158730159
+
+
+
+
+
+
+
+
+
+

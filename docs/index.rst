@@ -21,19 +21,19 @@ Table
 =====
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
+    :caption: Table of Contents
 
-    
-   pages/getting-started
-
-
-   pages/usage
+    pages/getting-started
 
 
-   pages/model
+    pages/usage
 
 
-   pages/package
+    pages/model
+
+
+    pages/package
 
 
 

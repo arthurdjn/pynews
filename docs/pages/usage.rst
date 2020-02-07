@@ -37,20 +37,20 @@ You can have access to the documents informations from the attributes of the New
 
 .. code-block:: pycon
 
-    # The shape of the dataset 
-    dataset.shape
+    The shape of the dataset 
+    >>> dataset.shape
     >>> (75141, 3000)
 
-    # The classes of the dataset
-    dataset.classes
-    >>>    ['4 Traders', 'App.ViralNewsChart.com', 'BioSpace', 'Bloomberg', 'EIN News',
-            'Fat Pitch Financials', 'Financial Content', 'Individual.com',
-            'Latest Nigerian News.com', 'Mail Online UK', 'Market Pulse Navigator',
-            'Marketplace', 'MyInforms', 'NewsR.in', 'Reuters', 'Town Hall' 'Uncova',
-            'Wall Street Business Network', 'Yahoo! Finance', 'Yahoo! News Australia']
+    The classes of the dataset
+    >>> dataset.classes
+    >>> ['4 Traders', 'App.ViralNewsChart.com', 'BioSpace', 'Bloomberg', 'EIN News',
+         'Fat Pitch Financials', 'Financial Content', 'Individual.com',
+         'Latest Nigerian News.com', 'Mail Online UK', 'Market Pulse Navigator',
+         'Marketplace', 'MyInforms', 'NewsR.in', 'Reuters', 'Town Hall' 'Uncova',
+         'Wall Street Business Network', 'Yahoo! Finance', 'Yahoo! News Australia']
 
-    # The BoW inputs
-    dataset.input_features
+    The BoW inputs
+    >>> dataset.input_features
     >>> tensor([[0., 0., 0.,  ..., 0., 0., 0.],
                 [0., 0., 0.,  ..., 0., 0., 0.],
                 [0., 0., 0.,  ..., 0., 0., 0.],
@@ -59,8 +59,8 @@ You can have access to the documents informations from the attributes of the New
                 [0., 0., 0.,  ..., 0., 0., 0.],
                 [0., 0., 0.,  ..., 0., 0., 0.]])
     
-    # The gold classes 
-    dataset.gold_classes
+    The gold classes 
+    >>> dataset.gold_classes
     >>> tensor([16,  0, 12,  ..., 19, 11, 12], dtype=torch.int32)
 
 
@@ -144,7 +144,7 @@ Evaluate
 Now that your model is trained, evaluate it on the test dataset.
 
 
-.. code-block:: pycon
+.. code-block:: python
 
     # Load the dataset
     train_loader = DataLoader(dataset    = test_dataset,
@@ -155,8 +155,8 @@ Now that your model is trained, evaluate it on the test dataset.
     test_accuracy, test_predictions, test_labels, confusion_matrix = eval_func(train_loader, model)
 
 
-.. code-block:: console
+.. code-block:: pycon
 
-    # Get the per class test_accuracy
-    confusion_matrix.diag() / confusion_matrix.sum(1) 
+    Get the per class test_accuracy
+    >>> confusion_matrix.diag() / confusion_matrix.sum(1) 
     >>> 

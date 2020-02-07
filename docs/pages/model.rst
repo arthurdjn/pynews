@@ -20,18 +20,6 @@ Then, the BoW and the vocabulary can be created.
 These functionalities are coded in the *pynews.data* module. 
 
 
-.. code-block:: python
-
-    import torch
-    from pynews import NewsDataset
-
-    PATH = "data/signal_20_obligatory1_train.tsv.gz"
-    # Limit of the vocabulary
-    VOCAB_SIZE = 3000
-
-    # Create the PyTorch Dataset object from the dataset
-    dataset = NewsDataset(PATH, vocab_size = VOCAB_SIZE)
-
 
 
 

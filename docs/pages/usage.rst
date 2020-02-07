@@ -138,9 +138,25 @@ You can now train the model with :
 
 
 
-
-
-
 Evaluate
 ========
 
+Now that your model is trained, evaluate it on the test dataset.
+
+
+.. code-block:: python
+
+    # Load the dataset
+    train_loader = DataLoader(dataset    = test_dataset,
+                              batch_size = BATCH_SIZE,
+                              shuffle    = True)
+
+    # Evaluate the model
+    test_accuracy, test_predictions, test_labels, confusion_matrix = eval_func(train_loader, model)
+
+
+.. code-block:: python
+
+    # Get the per class test_accuracy
+    confusion_matrix.diag() / confusion_matrix.sum(1) 
+    >>> 

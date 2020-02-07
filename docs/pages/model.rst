@@ -1,10 +1,9 @@
-=====
-Model
-=====
 
-PyNews introduces basic steps for Natural Language Processing (NLP) analysis.
-First, you may want to clean up the raw data, from *The Signal
-Media One-Million News Articles* which contains articles from september 2015. This dataset contains Bag of Words (BoW) about 75.000 documents from 20 sources. 
+.. toctree::
+    :maxdepth: 2
+    :caption: Model
+
+
 
 
 Data Processing
@@ -43,9 +42,13 @@ The hyper parameters used are described on the table below.
     |Parameter          |Value      |
     +-------------------+-----------+
     |Split Train/Dev    | .9        |
+    +-------------------+-----------+
     |Vocabulary         | 3000      |
+    +-------------------+-----------+
     |Batch size         | 32        |
+    +-------------------+-----------+
     |Learning Rate      | .09       |
+    +-------------------+-----------+
     |Epochs             | 250       |
     +-------------------+-----------+
 
@@ -63,7 +66,9 @@ number of hidden layers, and their architectures are presented in the tables bel
     | Layers    | Neurons   | Activation |     
     +-----------+-----------+------------+  
     | Input     | 3000      | ReLU       |
+    +-----------+-----------+------------+
     | Hidden    | 150       | Linear     |
+    +-----------+-----------+------------+
     | Output    | 20        | Softmax    |
     +-----------+-----------+------------+
 
@@ -74,8 +79,11 @@ number of hidden layers, and their architectures are presented in the tables bel
     | Layers    | Neurons   | Activation |     
     +-----------+-----------+------------+  
     | Input     | 3000      | ReLU       |
+    +-----------+-----------+------------+
     | Hidden 1  | 150       | ReLU       |
+    +-----------+-----------+------------+
     | Hidden 2  | 150       | Linear     |
+    +-----------+-----------+------------+
     | Output    | 20        | Softmax    |
     +-----------+-----------+------------+
 
@@ -86,9 +94,13 @@ number of hidden layers, and their architectures are presented in the tables bel
     | Layers    | Neurons   | Activation |     
     +-----------+-----------+------------+  
     | Input     | 3000      | ReLU       |
+    +-----------+-----------+------------+
     | Hidden 1  | 150       | ReLU       |
+    +-----------+-----------+------------+
     | Hidden 2  | 150       | ReLU       |
+    +-----------+-----------+------------+
     | Hidden 3  | 150       | Linear     |
+    +-----------+-----------+------------+
     | Output    | 20        | Softmax    |
     +-----------+-----------+------------+
 
@@ -99,10 +111,15 @@ number of hidden layers, and their architectures are presented in the tables bel
     | Layers    | Neurons   | Activation |     
     +-----------+-----------+------------+  
     | Input     | 3000      | ReLU       |
+    +-----------+-----------+------------+
     | Hidden 1  | 150       | ReLU       |
+    +-----------+-----------+------------+
     | Hidden 2  | 150       | ReLU       |
+    +-----------+-----------+------------+
     | Hidden 3  | 150       | ReLU       |
+    +-----------+-----------+------------+
     | Hidden 4  | 150       | Linear     |
+    +-----------+-----------+------------+  
     | Output    | 20        | Softmax    |
     +-----------+-----------+------------+
 
@@ -113,11 +130,17 @@ number of hidden layers, and their architectures are presented in the tables bel
     | Layers    | Neurons   | Activation |     
     +-----------+-----------+------------+  
     | Input     | 3000      | ReLU       |
+    +-----------+-----------+------------+
     | Hidden 1  | 150       | ReLU       |
+    +-----------+-----------+------------+
     | Hidden 2  | 150       | ReLU       |
+    +-----------+-----------+------------+
     | Hidden 3  | 150       | ReLU       |
+    +-----------+-----------+------------+
     | Hidden 4  | 150       | ReLU       |
+    +-----------+-----------+------------+
     | Hidden 5  | 150       | Linear     |
+    +-----------+-----------+------------+
     | Output    | 20        | Softmax    |
     +-----------+-----------+------------+
 
@@ -125,10 +148,55 @@ number of hidden layers, and their architectures are presented in the tables bel
 Evaluation
 ==========
 
+After we trained all models, there was no specific model that stood out. However, we tried to differenciate
+them regarding four indicators : the accuracy, macro-F1, precision and recall.
+
+Result
+======
+
+As shown in the table below, the model 4 presents the best accuracy. Nevertheless, this might not be the
+only criterion to consider, especially because of the different sources frequency. The Macro-F1 score might be
+less sensitive to imbalanced class frequencies. In that case, the model 3 performs better even if its precision is
+not optimal. Due to these performance, we choose the model 3 to push further the training.
 
 
+.. table:: Models performance
+
+    +-----------+-----------+-----------+-----------+-----------+-----------+
+    | Model     | Accuracy  | Macro-F1  | Precision | Recall    | Run Time  |
+    +-----------+-----------+-----------+-----------+-----------+-----------+
+    | Model 1   | 53.33     | 38.32     | 39.04     | 42.11     | 00:22:27  |
+    +-----------+-----------+-----------+-----------+-----------+-----------+
+    | Model 2   | 52.35     | 32.93     | 36.84     | 31.58     | 00:25:43  |
+    +-----------+-----------+-----------+-----------+-----------+-----------+
+    | Model 3   | 52.81     | 43.59     | 41.27     | 49.44     | 00:27:04  |
+    +-----------+-----------+-----------+-----------+-----------+-----------+
+    | Model 4   | 53.55     | 42.22     | 44.11     | 31.58     | 00:28:40  |
+    +-----------+-----------+-----------+-----------+-----------+-----------+
+    | Model 5   | 53.52     | 42.00     | 46.80     | 43.27     | 00:25:41  |
+    +-----------+-----------+-----------+-----------+-----------+-----------+
 
 
-Model Training
-==============
+The mean and standard deviations of the metrics when running the chosen model three times is displayed in
+the table below.
 
+
+.. table:: Model 3 performance
+
+    +-----------+-----------+-----------+
+    | Metric    | Average   | STD       |
+    +-----------+-----------+-----------+
+    | Accuracy  | 53.31     | 0.29      |
+    +-----------+-----------+-----------+
+    | Macro-F1  | 34.07     | 4.07      |
+    +-----------+-----------+-----------+
+    | Precision | 33.85     | 4.13      |
+    +-----------+-----------+-----------+
+    | Recal     | 37.27     | 5.47      |
+    +-----------+-----------+-----------+
+    | Run Time  | 42.73     | 10.28     |
+    +-----------+-----------+-----------+
+
+
+As shown in the results, the performance are really different from one training to the other. Most likely this
+is due to us no setting a random seed, leading to different weights, bias and also affecting the optimizer.

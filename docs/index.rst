@@ -20,16 +20,28 @@ https://readthedocs.org/projects/pip/badge/?version=latest&style=flat
 
 .. toctree::
     :maxdepth: 2
-    :caption: Table of Contents
+    :caption: Getting Started
 
     pages/getting-started
-    pages/getting-started
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Usage
 
     pages/usage
 
 
+.. toctree::
+    :maxdepth: 2
+    :caption: Model
+
     pages/model
 
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Package
 
     pages/package
 

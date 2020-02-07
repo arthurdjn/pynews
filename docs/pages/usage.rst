@@ -1,5 +1,12 @@
-Usage
-=====
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Usage
+
+
+
+Data
+====
 
 PyNews introduces basic steps for Natural Language Processing (NLP) analysis.
 First, you may want to clean up the raw data, from *The Signal

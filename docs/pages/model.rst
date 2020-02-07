@@ -1,10 +1,7 @@
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Model
-
-
-
+========
+Creation
+========
 
 Data Processing
 ===============
@@ -144,7 +141,7 @@ number of hidden layers, and their architectures are presented in the tables bel
     | Output    | 20        | Softmax    |
     +-----------+-----------+------------+
 
-
+==========
 Evaluation
 ==========
 
@@ -197,6 +194,9 @@ the table below.
     | Run Time  | 42.73     | 10.28     |
     +-----------+-----------+-----------+
 
+
+Conclusion
+==========
 
 As shown in the results, the performance are really different from one training to the other. Most likely this
 is due to us no setting a random seed, leading to different weights, bias and also affecting the optimizer.

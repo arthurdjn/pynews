@@ -7,7 +7,7 @@
 Welcome to PyNews's documentation!
 ==================================
 
-https://readthedocs.org/projects/pip/badge/?version=latest&style=flat
+.. image:: https://readthedocs.org/projects/pip/badge/?version=latest&style=flat
 
 
 **A python package for newspaper classification**
@@ -33,7 +33,7 @@ https://readthedocs.org/projects/pip/badge/?version=latest&style=flat
 
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :caption: Model
 
     pages/model

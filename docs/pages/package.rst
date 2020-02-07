@@ -4,7 +4,6 @@
     :caption: Package
 
 
-
 Data module
 ===========
 

@@ -1,10 +1,4 @@
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Getting Started
-
-
+=====
 About
 =====
 
@@ -18,6 +12,7 @@ From these different structures, we selected the best one and trained it three t
 unseen data.
 
 
+============
 Dependencies
 ============
 
@@ -31,6 +26,7 @@ Dependencies
 - Time
 
 
+===========
 Instalation
 ===========
 

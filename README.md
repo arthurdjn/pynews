@@ -40,7 +40,7 @@ This will install the package in your python environment and download all the la
 
 ## Running on SAGA
 
-Furing this project, **SAGA** offered GPUs to train the model faster.
+For this project **SAGA** offered GPUs to train the model faster.
 
 <p align="center">
   <img src="https://www.sigma2.no/themes/custom/sigma/logo.png">

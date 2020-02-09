@@ -8,7 +8,7 @@
 
 ### About
 
-**PyNews** is PyTorch supervised document classifier. The model is a custom *Feed Forward Neural Network* and uses *Bag of Words* (BoW) 
+**PyNews** is a PyTorch supervised document classifier. The model is a custom *Feed Forward Neural Network* and uses *Bag of Words* (BoW) 
 from an unknown document as inputs. The outputs are possible sources of this document.
 
 The model was trained on the **SAGA** server,  hosted at *Norwegian University of Science and Technology* (NTNU), in Norway.
